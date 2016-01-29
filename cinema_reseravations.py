@@ -69,14 +69,6 @@ class Cinema_Reservation_System:
         except:
             None
 
-        try:
-            self.c.execute('''CREATE TABLE IF NOT EXISTS seats(movie_id INTEGER,
-                                                 x INTEGER,
-                                                 y INTEGER,
-                                                 FOREIGN KEY(movie_id) REFERENCES movies(id))''')
-        except:
-            None
-
     def show_movies(self):
         cursor = self.con.execute(
             "SELECT id, name, rating FROM movies ORDER BY rating ASC")
